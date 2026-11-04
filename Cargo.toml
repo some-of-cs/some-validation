@@ -1,0 +1,23 @@
+[package]
+name = "some-validation"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maher Aladdin", "Some(CS)"]
+license = "Apache-2.0"
+description = "EstateStack Sovereign Abstract Validation Framework for Business Logic and Schemas"
+repository = "https://github.com/some-of-cs/some-validation"
+documentation = "https://docs.rs/some-validation"
+readme = "README.md"
+include = ["src/**/*", "tests/**/*", "data/**/*", "skills/**/*", ".agents/**/*", "Cargo.toml"]
+
+[features]
+default = []
+tonic = ["dep:tonic"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["arbitrary_precision"] }
+thiserror = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.8", features = ["v4", "serde"] }
+tonic = { version = "0.14.6", optional = true }
